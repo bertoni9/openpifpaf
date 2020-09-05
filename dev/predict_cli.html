@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction &#8212; OpenPifPaf Guide DEV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CLI --help" href="cli_help.html" />
+    <link rel="prev" title="Training" href="train.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">OpenPifPaf Guide DEV</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="train.html">
+   Training
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cli_help.html">
+   CLI
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --help
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples.html">
+   Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   FAQ
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="moduledocs.html">
+   Modules
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Plugins
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_cifar10.html">
+   Cifar10
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Development
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dev.html">
+   Contribute
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="profile.html">
+   Profile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/vita-epfl/openpifpaf/blob/master/HISTORY.md">
+   History
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/vita-epfl/openpifpaf">
+   GitHub
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  This is the dev version of the Guide. Here is the <a href="https://vita-epfl.github.io/openpifpaf/">stable version</a>.
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/predict_cli.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vita-epfl/openpifpaf/dev?urlpath=tree/guide/predict_cli.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/vita-epfl/openpifpaf/blob/dev/guide/predict_cli.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-arguments">
+   Optional Arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video">
+   Video
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference external" href="https://www.svenkreiss.com/">Sven Kreiss</a>, 2020</p>
+<div class="section" id="prediction">
+<h1>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h1>
+<p>Use OpenPifPaf from the command line to run multi-person pose estimation on images.
+For programmatic predictions, please refer to <a class="reference internal" href="predict_api.html"><span class="doc">Prediction API</span></a>.
+Below is a short intro to running prediction on videos.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">openpifpaf.predict</span></code> on an image:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python -m openpifpaf.predict coco/000000081988.jpg --image-output --json-output --debug
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:__main__:neural network device: cpu
+Traceback (most recent call last):
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/runpy.py&quot;, line 193, in _run_module_as_main
+    &quot;__main__&quot;, mod_spec)
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/runpy.py&quot;, line 85, in _run_code
+    exec(code, run_globals)
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/openpifpaf/predict.py&quot;, line 214, in &lt;module&gt;
+    main()
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/openpifpaf/predict.py&quot;, line 160, in main
+    processor, model = processor_factory(args)
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/openpifpaf/predict.py&quot;, line 106, in processor_factory
+    model_cpu, _ = network.factory_from_args(args)
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/openpifpaf/network/factory.py&quot;, line 64, in factory_from_args
+    download_progress=args.download_progress,
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/openpifpaf/network/factory.py&quot;, line 130, in factory
+    progress=download_progress)
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/hub.py&quot;, line 495, in load_state_dict_from_url
+    return torch.load(cached_file, map_location=map_location)
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py&quot;, line 585, in load
+    return _legacy_load(opened_file, map_location, pickle_module, **pickle_load_args)
+  File &quot;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py&quot;, line 765, in _legacy_load
+    result = unpickler.load()
+AttributeError: Can&#39;t get attribute &#39;CompositeFieldFused&#39; on &lt;module &#39;openpifpaf.network.heads&#39; from &#39;/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/openpifpaf/network/heads.py&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This command produced two outputs: an image and a json file.
+You can provide file or folder arguments to the <code class="docutils literal notranslate"><span class="pre">--image-output</span></code> and <code class="docutils literal notranslate"><span class="pre">--json-output</span></code> flags.
+Here, we used the default which created these two files:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>coco/000000081988.jpg.predictions.png
+coco/000000081988.jpg.predictions.json
+</pre></div>
+</div>
+<p>Here is the image:</p>
+<p><img alt="predictions" src="coco/000000081988.jpg.predictions.png" /></p>
+<p>And below is the json output. The json data is a list where each entry in the list corresponds to one pose annotation. In this case, there are five entries corresponding to the five people in the image. Each annotation contains information on <code class="docutils literal notranslate"><span class="pre">&quot;keypoints&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bbox&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;score&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;category_id&quot;</span></code>.</p>
+<p>All coordinates are in pixel coordinates. The <code class="docutils literal notranslate"><span class="pre">&quot;keypoints&quot;</span></code> entry is in COCO format with triples of <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">c)</span></code> (<code class="docutils literal notranslate"><span class="pre">c</span></code> for confidence) for every joint as listed under <a class="reference internal" href="datasets.html#coco-person-keypoints"><span class="std std-ref">COCO Person Keypoints</span></a>. The pixel coordinates have sub-pixel accuracy, i.e. 10.5 means the joint is between pixel 10 and 11.
+In rare cases, joints can be localized outside the field of view and then the pixel coordinates can be negative. When <code class="docutils literal notranslate"><span class="pre">c</span></code> is zero, the joint was not detected.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&quot;bbox&quot;</span></code> (bounding box) format is <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>: the <span class="math notranslate nohighlight">\((x, y)\)</span> coordinate of the top-left corner followed by width and height.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&quot;score&quot;</span></code> is a number between zero and one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python -m json.tool coco/000000081988.jpg.predictions.json
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python -m json.tool [-h] [--sort-keys] [infile] [outfile]
+python -m json.tool: error: argument infile: can&#39;t open &#39;coco/000000081988.jpg.predictions.json&#39;: [Errno 2] No such file or directory: &#39;coco/000000081988.jpg.predictions.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="optional-arguments">
+<h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--show</span></code>: show interactive matplotlib output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--debug-images</span></code>: enable debug messages and debug plots</p></li>
+</ul>
+<p>Full list of arguments is available with <code class="docutils literal notranslate"><span class="pre">--help</span></code>: <a class="reference internal" href="cli_help.html#cli-help-predict"><span class="std std-ref">CLI help for predict</span></a>.</p>
+</div>
+<div class="section" id="video">
+<h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.video --source myvideotoprocess.mp4 --video-output --json-output
+</pre></div>
+</div>
+<p>Requires OpenCV. The <code class="docutils literal notranslate"><span class="pre">--video-output</span></code> option also requires matplotlib.
+Replace <code class="docutils literal notranslate"><span class="pre">myvideotoprocess.mp4</span></code> with <code class="docutils literal notranslate"><span class="pre">0</span></code> for webcam0 or other OpenCV compatible sources.
+The full list of arguments is available with <code class="docutils literal notranslate"><span class="pre">--help</span></code>: <a class="reference internal" href="cli_help.html#cli-help-video"><span class="std std-ref">CLI help for video</span></a>.</p>
+<p>Image credit: “<a class="reference external" href="https://www.flickr.com/photos/fotologic/6038911779/in/photostream/">Learning to surf</a>” by fotologic which is licensed under <a class="reference external" href="https://creativecommons.org/licenses/by/2.0/">CC-BY-2.0</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="train.html" title="previous page">Training</a>
+    <a class='right-next' id="next-link" href="cli_help.html" title="next page">CLI <code class="docutils literal notranslate"><span class="pre">--help</span></code></a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Sven Kreiss<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
